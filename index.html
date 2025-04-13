@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to my page</title>
+    <!-- Adicionando a biblioteca AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             max-width: 800px;
@@ -21,7 +28,7 @@
             margin-bottom: 40px;
             flex-wrap: wrap;
         }
-        
+         
         .profile-intro {
             flex: 1;
             min-width: 200px;
@@ -42,10 +49,25 @@
             font-weight: 900;
         }
         
-        .wave {
-            font-size: 30px;
-            margin: 0 10px;
-        }
+        /* Animação da mão acenando */
+.wave {
+    font-size: 30px;
+    margin: 0 10px;
+    display: inline-block;
+    animation: waving-hand 2.5s infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes waving-hand {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
         
         p {
             margin: 10px 0;
@@ -60,7 +82,12 @@
             margin-bottom: 20px;
             font-weight: 700;
         }
-        
+        #about {
+            background-color:#222;
+            color: #e0f0ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
         .experience-item, .education-item {
             display: flex;
             justify-content: space-between;
@@ -127,7 +154,7 @@
             display: flex;
             align-items: center;
         }
-        
+      
         /* Estilos para a seção de projetos */
         .projects-intro {
             text-align: center;
@@ -288,6 +315,7 @@
             margin-top: 60px;
             border-top: 1px solid #eee;
             padding-top: 30px;
+            left: 0;
             text-align: center;
         }
         
@@ -295,9 +323,32 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: The;
+            margin-top: 15px;
         }
-        
+        /* Estilização da scrollbar - linha preta simples */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Para Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #000 transparent;
+}
         /* Media queries para responsividade */
         @media (max-width: 768px) {
             .projects-heading {
@@ -368,13 +419,12 @@
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="header" data-aos="fade-down" data-aos-duration="1000">
         <div class="profile-intro">
-            <h1>Hi, Eu sou o Eduardo<span class="wave">👋</span></h1>
-            <p>Programador. Eu amo construir coisas. e sou bem ativo em programação diariamente.</p>
+            <h1 data-aos="fade-right" data-aos-delay="200">Hi, Eu sou o Eduardo<span class="wave" data-aos="fade-in" data-aos-delay="800">👋</span></h1>
+            <p data-aos="fade-up" data-aos-delay="400">Programador. Eu amo construir coisas. e sou bem ativo em programação diariamente.</p>
             
- 
-            <div class="social-links">
+            <div class="social-links" data-aos="fade-up" data-aos-delay="600">
                 <a href="https://github.com/Eduvale007" target="_blank" class="social-link github">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -391,33 +441,33 @@
                 </a>
             </div>
         </div>
-        <img src="images/me.jpeg" alt="Profile picture" class="profile-image">
+        <img src="images/me.jpeg" alt="Profile picture" class="profile-image" data-aos="fade-left" data-aos-delay="400">
     </div>
     
-    <section id="about">
-        <h2>Sobre</h2>
-        <p>Olá me chamo Eduardo</b> sou um entusiasta da Tecnologia da Informação e, ao longo da minha jornada, passei por diversas tecnologias, como Java, Git, MySQL, MongoDB, Python, CSS, HTML, entre outras.
+    <section id="about" data-aos="fade-up" data-aos-duration="800">
+        <h2 data-aos="fade-right" data-aos-delay="100">Sobre</h2>
+        <p data-aos="fade-up" data-aos-delay="300">Olá me chamo Eduardo</b> sou um entusiasta da Tecnologia da Informação e, ao longo da minha jornada, passei por diversas tecnologias, como Java, Git, MySQL, MongoDB, Python, CSS, HTML, entre outras.
             Posso afirmar que essa evolução foi incrível, pois pude aplicar meu aprendizado em diversos projetos práticos. Agora, estou explorando novas possibilidades, como o React que pretendo usar neste portólio.</p>
     </section>
     
     <!-- seção de projetos -->
-    <section id="projects">
-        <div class="projects-intro">
-            <div class="my-projects-badge">Meus Projetos</div>
-            <h2 class="projects-heading">Da uma olhadinha no meu trabalho mais recente</h2>
-            <p class="projects-subtitle">Tenho trabalhado em vários projetos, desde páginas simples até sites complexos. Aqui estão um dos meus proejtos favoritos.</p>
+    <section id="projects" data-aos="fade-up" data-aos-duration="800">
+        <div class="projects-intro" data-aos="fade-up" data-aos-delay="100">
+            <div class="my-projects-badge" data-aos="zoom-in" data-aos-delay="200">Meus Projetos</div>
+            <h2 class="projects-heading" data-aos="fade-up" data-aos-delay="300">Da uma olhadinha no meu trabalho mais recente</h2>
+            <p class="projects-subtitle" data-aos="fade-up" data-aos-delay="400">Tenho trabalhado em vários projetos, desde páginas simples até sites complexos. Aqui estão um dos meus proejtos favoritos.</p>
         </div>
         
         <div class="projects-grid">
             <!-- Projeto 1: TechSupport -->
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                 <img src="images/tech.png" alt="Chat Collect" class="project-image">
                 <div class="project-details">
-                    <h3 class="project-title">TechSupport</h3>
-                    <p class="project-date">Março-2025</p>
-                    <p class="project-description">O TechSupport é um projeto dedicado à assistência técnica especializada no conserto de celulares e dispositivos móveis. A plataforma oferece aos usuários informações completas sobre os serviços de reparo, diagnóstico técnico e suporte especializado para uma variedade de modelos e marcas de dispositivos.</p>
+                    <h3 class="project-title" data-aos="fade-right" data-aos-delay="100" data-aos-anchor-placement="top-bottom">TechSupport</h3>
+                    <p class="project-date" data-aos="fade-right" data-aos-delay="150" data-aos-anchor-placement="top-bottom">Março-2025</p>
+                    <p class="project-description" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom">O TechSupport é um projeto dedicado à assistência técnica especializada no conserto de celulares e dispositivos móveis. A plataforma oferece aos usuários informações completas sobre os serviços de reparo, diagnóstico técnico e suporte especializado para uma variedade de modelos e marcas de dispositivos.</p>
                     
-                    <div class="tech-tags">
+                    <div class="tech-tags" data-aos="fade-up" data-aos-delay="250" data-aos-anchor-placement="top-bottom">
                         <span class="tech-tag">Next.js</span>
                         <span class="tech-tag">Typescript</span>
                         <span class="tech-tag">PostgreSQL</span>
@@ -428,7 +478,7 @@
                         <span class="tech-tag">Magic UI</span>
                     </div>
                     
-                    <div class="project-links">
+                    <div class="project-links" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top-bottom">
                         <a href="https://techele-production.up.railway.app/" class="project-link">
                             <span>Website</span>
                         </a>
@@ -437,20 +487,20 @@
             </div>
             
             <!-- Projeto 2: WebFast -->
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
                 <img src="images/webFast.png" alt="Magic UI" class="project-image">
                 <div class="project-details">
-                    <h3 class="project-title">Webfast</h3>
-                    <p class="project-date">Novembro-2024</p>
-                    <p class="project-description">O Web Fast é um projeto que desenvolvo com muito amor e dedicação, utilizando HTML e CSS. No futuro, pretendo expandi-lo com React, Node.js e MySQL. Esse projeto representa a realização de um grande sonho para mim.</p>
+                    <h3 class="project-title" data-aos="fade-right" data-aos-delay="100" data-aos-anchor-placement="top-bottom">Webfast</h3>
+                    <p class="project-date" data-aos="fade-right" data-aos-delay="150" data-aos-anchor-placement="top-bottom">Novembro-2024</p>
+                    <p class="project-description" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom">O Web Fast é um projeto que desenvolvo com muito amor e dedicação, utilizando HTML e CSS. No futuro, pretendo expandi-lo com React, Node.js e MySQL. Esse projeto representa a realização de um grande sonho para mim.</p>
                     
-                    <div class="tech-tags">
+                    <div class="tech-tags" data-aos="fade-up" data-aos-delay="250" data-aos-anchor-placement="top-bottom">
                         <span class="tech-tag">HTML</span>
                         <span class="tech-tag">CSS</span>
                         <span class="tech-tag">JavaScript</span>
                     </div>
                     
-                    <div class="project-links">
+                    <div class="project-links" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top-bottom">
                         <a href="https://eduvale007.github.io/WebFast/" class="project-link">
                             <span>Website</span>
                         </a>
@@ -459,14 +509,14 @@
             </div>
             
             <!-- Projeto 3: Hostel -->
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
                 <img src="images/hotel.png" alt="llm.report" class="project-image">
                 <div class="project-details">
-                    <h3 class="project-title">Range hotels</h3>
-                    <p class="project-date">Setembro-2024</p>
-                    <p class="project-description">Este é um projeto sobre o Range Hotels, um hotel que oferece informações completas sobre hospedagem, restaurantes, localização e os diferentes tipos de acomodações disponíveis. Entre as opções de hospedagem.</p>
+                    <h3 class="project-title" data-aos="fade-right" data-aos-delay="100" data-aos-anchor-placement="top-bottom">Range hotels</h3>
+                    <p class="project-date" data-aos="fade-right" data-aos-delay="150" data-aos-anchor-placement="top-bottom">Setembro-2024</p>
+                    <p class="project-description" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom">Este é um projeto sobre o Range Hotels, um hotel que oferece informações completas sobre hospedagem, restaurantes, localização e os diferentes tipos de acomodações disponíveis. Entre as opções de hospedagem.</p>
                     
-                    <div class="tech-tags">
+                    <div class="tech-tags" data-aos="fade-up" data-aos-delay="250" data-aos-anchor-placement="top-bottom">
                         <span class="tech-tag">Next.js</span>
                         <span class="tech-tag">Typescript</span>
                         <span class="tech-tag">PostgreSQL</span>
@@ -478,7 +528,7 @@
                         <span class="tech-tag">Cloudflare Workers</span>
                     </div>
                     
-                    <div class="project-links">
+                    <div class="project-links" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top-bottom">
                         <a href="https://eduvale007.github.io/HostelAngels/" class="project-link">
                             <span>Website</span>
                         </a>
@@ -488,14 +538,14 @@
             </div>
             
             <!-- Projeto 4: Simula aposentadoria -->
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
                 <img src="images/simula.png" alt="Automatic Chat" class="project-image">
                 <div class="project-details">
-                    <h3 class="project-title">Simula aposentadoria</h3>
-                    <p class="project-date">Setembro-2024</p>
-                    <p class="project-description">Este é um projeto de simulação de aposentadoria que calcula e armazena os dados no MongoDB via nuvem, utilizando uma API desenvolvida por mim. O sistema foi criado com Express.js, Node.js, HTML e CSS.</p>
+                    <h3 class="project-title" data-aos="fade-right" data-aos-delay="100" data-aos-anchor-placement="top-bottom">Simula aposentadoria</h3>
+                    <p class="project-date" data-aos="fade-right" data-aos-delay="150" data-aos-anchor-placement="top-bottom">Setembro-2024</p>
+                    <p class="project-description" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top-bottom">Este é um projeto de simulação de aposentadoria que calcula e armazena os dados no MongoDB via nuvem, utilizando uma API desenvolvida por mim. O sistema foi criado com Express.js, Node.js, HTML e CSS.</p>
                     
-                    <div class="tech-tags">
+                    <div class="tech-tags" data-aos="fade-up" data-aos-delay="250" data-aos-anchor-placement="top-bottom">
                         <span class="tech-tag">Next.js</span>
                         <span class="tech-tag">Typescript</span>
                         <span class="tech-tag">PostgreSQL</span>
@@ -507,7 +557,7 @@
                         <span class="tech-tag">Cloudflare Workers</span>
                     </div>
                     
-                    <div class="project-links">
+                    <div class="project-links" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top-bottom">
                         <a href="https://aposentadoria.onrender.com/" class="project-link">
                             <span>Website</span>
                         </a>
@@ -517,79 +567,73 @@
         </div>
     </section>
     
-    <section id="experience">
-        <h2>Work Experience</h2>
+    <section id="experience" data-aos="fade-up" data-aos-duration="800">
+        <h2 data-aos="fade-right" data-aos-delay="100">Work Experience</h2>
         
-        <div class="experience-item">
-            <div class="experience-logo" style="background-color: #6c5ce7;">
+        <div class="experience-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="experience-logo" style="background-color: #6c5ce7;" data-aos="zoom-in" data-aos-delay="100">
                 <img src="/api/placeholder/50/50" alt="Atomic Finance logo">
             </div>
-            <div class="experience-details">
+            <div class="experience-details" data-aos="fade-left" data-aos-delay="200">
                 <h3 class="company-name">Atomic Finance</h3>
                 <p class="position">Bitcoin Protocol Engineer</p>
             </div>
-            <div class="experience-date">May 2021 - Oct 2022</div>
+            <div class="experience-date" data-aos="fade-left" data-aos-delay="300">May 2021 - Oct 2022</div>
         </div>
-        
-      
     </section>
     
-    <section id="education">
-        <h2>Educação</h2>
+    <section id="education" data-aos="fade-up" data-aos-duration="800">
+        <h2 data-aos="fade-right" data-aos-delay="100">Educação</h2>
         
-        <div class="education-item">
-            <div class="education-logo" style="background-color: #403e3e;">
+        <div class="education-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="education-logo" style="background-color: #403e3e;" data-aos="zoom-in" data-aos-delay="100">
                 <img src="" alt=""> 
             </div>
-            <div class="education-details">
+            <div class="education-details" data-aos="fade-left" data-aos-delay="200">
                 <h3 class="school-name">Universidade nove de julho</h3>
                 <p class="degree">Cursando Ciência da Computação - 3 Semestre</p>
             </div>
-            <div class="education-date">2024 - 2028</div>
+            <div class="education-date" data-aos="fade-left" data-aos-delay="300">2024 - 2028</div>
         </div>
 
-        <div class="education-item">
-            <div class="education-logo" style="background-color: #403e3e;">
+        <div class="education-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="education-logo" style="background-color: #403e3e;" data-aos="zoom-in" data-aos-delay="100">
                 <img src="" alt=""> 
             </div>
-            <div class="education-details">
+            <div class="education-details" data-aos="fade-left" data-aos-delay="200">
                 <h3 class="school-name">Wizard</h3>
                 <p class="degree">Cursando inglês - Teens 8</p>
             </div>
-            <div class="education-date">2024 - 2028</div>
-        </div>
-        
-       
-    </section>
-    
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills">
-            <div class="skill-tag">React</div>
-            <div class="skill-tag">Express.js</div>
-            <div class="skill-tag">Typescript</div>
-            <div class="skill-tag">Node.js</div>
-            <div class="skill-tag">Python</div>
-            <div class="skill-tag">Java</div>
-            <div class="skill-tag">Javascript</div>
-            <div class="skill-tag">MySQL</div>
-            <div class="skill-tag">Git</div>
-            <div class="skill-tag">MongoDB</div>
-
+            <div class="education-date" data-aos="fade-left" data-aos-delay="300">2024 - 2028</div>
         </div>
     </section>
     
-
-    <footer>
-        <p>© 2025 Eduardo - Desenvolvedor Web</p>
-        <div class="footer-social">
-            <a href="https://github.com/Eduvale007" target="_blank" class="social-link github">
+    <section id="skills" data-aos="fade-up" data-aos-duration="800">
+        <h2 data-aos="fade-right" data-aos-delay="100">Skills</h2>
+        <div class="skills" data-aos="fade-up" data-aos-delay="300">
+            <div class="skill-tag" data-aos="zoom-in" data-aos-delay="100">React</div>
+            <div class="skill-tag" data-aos="zoom-in" data-aos-delay="200">Express.js</div>
+            <div class="skill-tag" data-aos="zoom-in" data-aos-delay="300">Typescript</div>
+            <div class="skill-tag" data-aos="zoom-in" data-aos-delay="400">Node.js</div>
+            <div class="skill-tag" data-aos="zoom-in" data-aos-delay="500">Python</div>
+            <div class="skill-tag" data-aos="zoom-in" data-aos-delay="600">Java</div>
+            <div class="skill-tag" data-aos="zoom-in" data-aos-delay="700">Javascript</div>
+            <div class="skill-tag" data-aos="zoom-in" data-aos-delay="800">MySQL</div>
+            <div class="skill-tag" data-aos="zoom-in" data-aos-delay="900">Git</div>
+            <div class="skill-tag" data-aos="zoom-in" data-aos-delay="1000">MongoDB</div>
+        </div>
+    </section>
+    
+    <footer data-aos="fade-up" data-aos-duration="800">
+        <p data-aos="fade-up" data-aos-delay="100">© 2025 Eduardo - Desenvolvedor Web</p>
+        <div class="footer-social" data-aos="fade-up" data-aos-delay="300">
+            <a href="https://github.com/Eduvale007" target="_blank" class="social-link github" data-aos="zoom-in" data-aos-delay="100">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                 </svg>
                 GitHub
             </a>
-            <a href="https://www.linkedin.com/in/eduardoandrade007/" target="_blank" class="social-link linkedin">
+            <a href="https://www.linkedin.com/in/eduardoandrade007/" target="_blank" class="social-link linkedin" data-aos="zoom-in" data-aos-delay="300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                     <rect x="2" y="9" width="4" height="12"></rect>
@@ -599,5 +643,17 @@
             </a>
         </div>
     </footer>
+
+    <!-- Adicionar scripts do AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
 </body>
 </html>
